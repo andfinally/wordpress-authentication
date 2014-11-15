@@ -74,5 +74,5 @@ How it works
 Possible improvements
 ---------------------
 
-* We could add a timestamp check in login.php so it only accepts recent responses from our WordPress /authenticate endpoint.
-* If a user's not authenticated when he requests a protected page, we could save the original request to return him there after successful authentication.
+* You could add a timestamp check in login.php so it only accepts recent responses from our WordPress /authenticate endpoint.
+* If a user's not authenticated when he requests a protected page, you could save the original request to return him there after successful authentication.
