@@ -4,7 +4,11 @@ WordPress VIP OAuth2 authentication for a PHP site
 What is this?
 -------------
 
-These PHP scripts allow you to add WordPress OAuth2 authentication to a PHP site that's hosted outside of WordPress. You can ensure that only a recognised user of your WordPress site who is logged in to wordpress.com can access your pages. This has the huge advantage of making WordPress your authentication system: your WordPress site can look after your user accounts, and your users don't have to remember another password. This method involves several requests between your PHP site and WordPress, but that all happens in the background - the setup is fairly simple. Please note, this technique will **only work for WordPress VIP clients**. There may be a way to make it work with normal WordPress sites, but I haven't tried to do that. [More details about VIP OAuth2 support.](https://wordpress.com/oauth2/)
+These PHP scripts allow you to add WordPress OAuth2 authentication to a PHP site that's hosted outside of WordPress. You can ensure that only a recognised user of your WordPress site who is logged in to wordpress.com can access your pages. This has the huge advantage of making WordPress your authentication system: your WordPress site can look after your user accounts, and your users don't have to remember another password.
+
+This method involves several requests between your PHP site and WordPress, but it all happens in the background - the setup is fairly simple.
+
+Please note, this technique will **only work for WordPress VIP clients**. There may be a way to make it work with normal WordPress sites, but I haven't tried to do that. [More details about VIP OAuth2 support.](https://wordpress.com/oauth2/)
 
 Prerequisites
 -------------
@@ -22,7 +26,7 @@ Check out the repository
 * Once the page template is deployed, go into your site's WordPress admin and create a new page using it. Make sure the slug is /authenticate.
   * This will create the endpoint your external site will send requests to to authenticate users. If your external site is example.com and your WordPress site is mywordpress.com, http://example.com/login.php will send authentication requests to http://mywordpress.com/authenticate.
 
-Set up a Wordpress.com app
+Create a Wordpress.com app
 --------------------------
 
 * Now you need to create a WordPress.com application to register some details about the site you want to authenticate. Go to [https://developer.wordpress.com/apps/](https://developer.wordpress.com/apps/).
