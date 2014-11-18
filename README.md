@@ -61,7 +61,7 @@ How it works
 * When a user visits a page which includes authenticate.php, we set a session token called wpcc_state and bounce him to the WordPress.com authentication page, https://public-api.wordpress.com/oauth2/authenticate, sending a number of parameters, including our WordPress client ID and the address of the page wordpress.com should reply to.
 * If he's not logged in to the WordPress site he's invited to do so. When he is logged in, he's asked for permission to authenticate him against his WordPress account. When he agrees, wordpress.com sends him back to our REDIRECT_URL login.php, along with a token in the parameter $_GET['state'].
 * login.php checks the state parameter matches the wpcc_state token we saved in the session to confirm the request originates from the same user we sent to wordpress.com.
-* But wait! WordPress has told us the user's logged in to wordpress.com, but it hasn't sent us much detail about them. We want to know if he's registered as a user on our WordPress site. We need his username! To get his details from the wordpress.com API we need an access token. We send a request to https://public-api.wordpress.com/oauth2/token, sending again our client ID again, the URL of login.php, and the token https://public-api.wordpress.com/oauth2/authenticate sent us.
+* But wait! WordPress has told us the user's logged in to wordpress.com, but it hasn't sent us much detail about him. We want to know if he's registered as a user on our WordPress site. We need his username! To get his details from the wordpress.com API we need an access token. We send a request to https://public-api.wordpress.com/oauth2/token, sending again our client ID again, the URL of login.php, and the token https://public-api.wordpress.com/oauth2/authenticate sent us.
 * If it's happy with the parameters the WordPress API returns the access token we want.
 * We now make a request to https://public-api.wordpress.com/rest/v1/me/, sending the access token.
 * The public API finally gives us the user's basic details, like display name, username and email address. Phew! Getting there.
@@ -76,3 +76,4 @@ Possible improvements
 
 * You could add a timestamp check in login.php so it only accepts recent responses from our WordPress /authenticate endpoint.
 * If a user's not authenticated when he requests a protected page, you could save the original request to return him there after successful authentication.
+* You could use the $shared_secret for both the token hash and the encryption of the user status response, so you no longer have to enter a $key in the config.
