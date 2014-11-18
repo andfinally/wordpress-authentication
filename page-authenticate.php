@@ -3,7 +3,7 @@
  * Template Name: Authenticate endpoint
  */
 
-/**
+/*
 
     Endpoint for clientside requests to check if a user is a site user.
 
