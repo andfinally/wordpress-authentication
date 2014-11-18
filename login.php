@@ -13,7 +13,6 @@ require 'config.php';
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <base id="baseURL" href="<?php echo BASE_URL; ?>"/>
     <title>Login processing page</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css"/>
 </head>
 <body>
 
