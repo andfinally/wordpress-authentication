@@ -28,7 +28,7 @@ define( 'WORDPRESS_DOMAIN', 'http://mywordpress.com' );
 // If your site lives at a top-level address, like http://example.com leave this as is.
 define( 'APP_ROOT', '' );
 
-// Add a random phrase here - we use it to encrypt the token
+// Add a random phrase here - we use it to as a salt for the token
 $shared_secret = 'put your unique phrase here';
 
 // Add a different random phrase here - we use it to decrypt the payload we receive from WordPress
